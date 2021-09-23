@@ -43,12 +43,7 @@ export const Newegg: Store = {
       series: 'test:series',
       url: 'https://www.newegg.com/western-digital-blue-500gb/p/N82E16820250087?Item=N82E16820250087',
     },
-    {
-      brand: 'evga',
-      model: 'ftw3 ultra',
-      series: '3080',
-      url: 'https://www.newegg.com/global/il-en/evga-geforce-rtx-3080-10g-p5-3897-kr/p/N82E16814487518?Item=N82E16814487518&Tpk=N82E16814487518',
-    },
+    // TEST IN-STOCK
     // {
     //   brand: 'evga',
     //   model: 'ftw3 ultra',
@@ -61,6 +56,42 @@ export const Newegg: Store = {
     //   series: '3080',
     //   url: 'https://www.newegg.com/global/il-en/abs-ala258/p/N82E16883360172?Description=RTX%2020&cm_re=RTX_20-_-83-360-172-_-Product',
     // },
+    {
+      brand: 'evga',
+      model: 'xc gaming',
+      series: '3060ti',
+      url: 'https://www.newegg.com/global/il-en/evga-geforce-rtx-3060-ti-08g-p5-3663-kr/p/N82E16814487535?Item=N82E16814487535',
+    },
+    {
+      brand: 'evga',
+      model: 'ftw3 ultra',
+      series: '3060ti',
+      url: 'https://www.newegg.com/global/il-en/evga-geforce-rtx-3060-ti-08g-p5-3667-kl/p/N82E16814487546?Item=N82E16814487546',
+    },
+    {
+      brand: 'evga',
+      model: 'xc3 ultra',
+      series: '3070',
+      url: 'https://www.newegg.com/global/il-en/evga-geforce-rtx-3070-08g-p5-3755-kr/p/N82E16814487530?Item=N82E16814487530',
+    },
+    {
+      brand: 'evga',
+      model: 'ftw3 ultra',
+      series: '3070',
+      url: 'https://www.newegg.com/global/il-en/evga-geforce-rtx-3070-08g-p5-3767-kr/p/N82E16814487532?Item=N82E16814487532',
+    },
+    {
+      brand: 'gigabyte',
+      model: 'gaming oc',
+      series: '3070',
+      url: 'https://www.newegg.com/global/il-en/gigabyte-geforce-rtx-3070-gv-n3070gaming-oc-8gd/p/N82E16814932342?Item=N82E16814932342&Tpk=N82E16814932342',
+    },
+    {
+      brand: 'evga',
+      model: 'ftw3 ultra',
+      series: '3080',
+      url: 'https://www.newegg.com/global/il-en/evga-geforce-rtx-3080-10g-p5-3897-kr/p/N82E16814487518?Item=N82E16814487518&Tpk=N82E16814487518',
+    },
   ],
   name: 'newegg',
   realTimeInventoryLookup: async (itemNumber: string) => {

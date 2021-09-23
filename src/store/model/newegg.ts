@@ -17,6 +17,10 @@ export const Newegg: Store = {
         container: '.loading-text',
         text: ['add to cart'],
       },
+      {
+        container: '.product-promo',
+        text: ['this item can only be purchased with a combo'],
+      },
     ],
     maxPrice: {
       container: '.price-current',

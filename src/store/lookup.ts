@@ -330,6 +330,13 @@ async function lookupIem(
         : link.openCartAction(browser));
     }
 
+    if (config.page.screenshot) {
+      logger.debug('ℹ saving screenshot');
+
+      link.screenshot = `success-${Date.now()}.png`;
+      await page.screenshot({path: link.screenshot});
+    }
+
     sendNotification(link, store);
 
     if (config.page.inStockWaitTime) {
@@ -340,12 +347,6 @@ async function lookupIem(
       }, 1000 * config.page.inStockWaitTime);
     }
 
-    if (config.page.screenshot) {
-      logger.debug('ℹ saving screenshot');
-
-      link.screenshot = `success-${Date.now()}.png`;
-      await page.screenshot({path: link.screenshot});
-    }
   }
 
   return statusCode;

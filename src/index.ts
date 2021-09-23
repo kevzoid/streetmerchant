@@ -115,8 +115,9 @@ export async function launchBrowser(): Promise<Browser> {
     },
     headless: config.browser.isHeadless,
   });
-
-  config.browser.userAgent = await browser.userAgent();
+  let ua = await browser.userAgent();
+  console.log({ua});
+  config.browser.userAgent = ua;
 
   return browser;
 }

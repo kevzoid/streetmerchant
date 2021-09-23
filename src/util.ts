@@ -101,9 +101,10 @@ export async function getRandomUserAgent(): Promise<string> {
     ];
   }
 
+  let uas = topUserAgents.filter((ua: string)=>!/linux/i.test(ua));
   const userAgent =
-    topUserAgents[Math.floor(Math.random() * topUserAgents.length)];
-  logger.debug('user agent', {userAgent});
+    uas[Math.floor(Math.random() * uas.length)];
+  logger.info('user agent', {userAgent});
   return userAgent;
 }
 

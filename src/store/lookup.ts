@@ -26,6 +26,7 @@ import {processBackoffDelay} from './model/helpers/backoff';
 import {sendNotification} from '../messaging';
 import {handleCaptchaAsync} from './captcha-handler';
 import useProxy from '@doridian/puppeteer-page-proxy';
+import randomUseragent from 'random-useragent';
 
 const inStock: Record<string, boolean> = {};
 

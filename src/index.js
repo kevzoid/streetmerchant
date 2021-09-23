@@ -121,10 +121,7 @@ export async function launchBrowser() {
     },
     headless: config.browser.isHeadless,
   });
-  let ua = await browser.userAgent();
-  console.log({ua});
-  config.browser.userAgent = ua;
-
+  config.browser.userAgent = await browser.userAgent();
   return browser;
 }
 

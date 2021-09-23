@@ -310,7 +310,7 @@ async function lookupIem(
 ): Promise<number> {
   const givenWaitFor = store.waitUntil ? store.waitUntil : 'networkidle0';
   const response: HTTPResponse | null = await page.goto(link.url, {
-    waitUntil: givenWaitFor,
+    waitUntil: 'load',
   });
 
   const successStatusCodes = store.successStatusCodes ?? [[0, 399]];

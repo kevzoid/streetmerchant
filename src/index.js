@@ -1,15 +1,20 @@
 import * as Process from 'process';
 import {config} from './config'; // Needs to be loaded first
 import {startAPIServer, stopAPIServer} from './web';
-import {Browser, launch} from 'puppeteer';
+// import puppeteer from 'puppeteer';
+import puppeteer from 'puppeteer-extra';
 import {getSleepTime} from './util';
 import {logger} from './logger';
 import {storeList} from './store/model';
 import {tryLookupAndLoop} from './store';
+import UserAgent from 'user-agents';
 
-let browser: Browser | undefined;
+puppeteer.use(require('puppeteer-extra-plugin-anonymize-ua')());
+puppeteer.use(require('puppeteer-extra-plugin-stealth')());
 
-async function sleep(ms: number) {
+let browser;
+
+async function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
@@ -65,7 +70,7 @@ async function loopMain() {
   try {
     restartMain();
     await main();
-  } catch (error: unknown) {
+  } catch (error) {
     logger.error(
       '✖ something bad happened, resetting streetmerchant in 5 seconds',
       error
@@ -74,8 +79,8 @@ async function loopMain() {
   }
 }
 
-export async function launchBrowser(): Promise<Browser> {
-  const args: string[] = [];
+export async function launchBrowser() {
+  const args = [];
 
   // Skip Chromium Linux Sandbox
   // https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md#setting-up-chrome-linux-sandbox
@@ -107,7 +112,8 @@ export async function launchBrowser(): Promise<Browser> {
   }
 
   await stop();
-  const browser = await launch({
+  // await page.setUserAgent(new UserAgent({platform: 'Win32'}));
+  const browser = await puppeteer.launch({
     args,
     defaultViewport: {
       height: config.page.height,
@@ -122,7 +128,7 @@ export async function launchBrowser(): Promise<Browser> {
   return browser;
 }
 
-void loopMain();
+loopMain();
 
 process.on('SIGINT', stopAndExit);
 process.on('SIGQUIT', stopAndExit);

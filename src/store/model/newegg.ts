@@ -49,18 +49,18 @@ export const Newegg: Store = {
       series: '3080',
       url: 'https://www.newegg.com/global/il-en/evga-geforce-rtx-3080-10g-p5-3897-kr/p/N82E16814487518?Item=N82E16814487518&Tpk=N82E16814487518',
     },
-    {
-      brand: 'evga',
-      model: 'ftw3 ultra',
-      series: '3080',
-      url: 'https://www.newegg.com/global/il-en/gigabyte-radeon-rx-6600-xt-gv-r66xtgamingoc-pro-8gd/p/N82E16814932473?Item=N82E16814932473&Tpk=N82E16814932473',
-    },
-    {
-      brand: 'evga',
-      model: 'ftw3 ultra',
-      series: '3080',
-      url: 'https://www.newegg.com/global/il-en/abs-ala258/p/N82E16883360172?Description=RTX%2020&cm_re=RTX_20-_-83-360-172-_-Product',
-    },
+    // {
+    //   brand: 'evga',
+    //   model: 'ftw3 ultra',
+    //   series: '3080',
+    //   url: 'https://www.newegg.com/global/il-en/gigabyte-radeon-rx-6600-xt-gv-r66xtgamingoc-pro-8gd/p/N82E16814932473?Item=N82E16814932473&Tpk=N82E16814932473',
+    // },
+    // {
+    //   brand: 'evga',
+    //   model: 'ftw3 ultra',
+    //   series: '3080',
+    //   url: 'https://www.newegg.com/global/il-en/abs-ala258/p/N82E16883360172?Description=RTX%2020&cm_re=RTX_20-_-83-360-172-_-Product',
+    // },
   ],
   name: 'newegg',
   realTimeInventoryLookup: async (itemNumber: string) => {
